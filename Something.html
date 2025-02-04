@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <img src="https://media.tenor.com/cOjBPqUGt4MAAAAj/bear-hug.gif" alt="Bear Hug GIF">
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: pink;
+        }
+        h1 {
+            color: red;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #yes {
+            background-color: red;
+            color: white;
+            font-size: 20px;
+        }
+        #no {
+            background-color: white;
+            color: red;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will you be my Valentine? 💖</h1>
+    <p id="message">Please don't say no... it'll break my heart! 💔</p>
+    <div class="buttons">
+        <button id="yes" onclick="sayYes()">Yes</button>
+        <button id="no" onclick="shrinkNo()">No</button>
+    </div>
+    
+    <script>
+        let yesSize = 20;
+        let noSize = 20;
+        let messages = [
+            "Please reconsider! ( • ᴖ • ｡)", 
+            "Pweaaase (⁠╥⁠﹏⁠╥⁠)", 
+            "Please, with hearts?", 
+            "Please, with the cherry on top?",
+            "Pretty please??? ( •̯́ ^ •̯̀)",
+            "Give me a chance please..? ૮(˶ㅠ︿ㅠ)ა",
+            "Still a no? ( • ^ • . )",
+            "This is taking awhile... (｡ •́︿•̀｡ )",
+            "How about chocolate, will that help? 🍫",
+            "That didnt work? Okie...",
+            "I can wait, its okay.",
+            "Still a no? ｡°(°.◜ᯅ◝°)°｡",
+            "Still waiting for you to say yes.",
+            "Maybe a cat will change your mind? 🐈",
+            "How about a flower? 🌹",
+            "That still didnt work?",
+            "What about a burger? 🍔",
+            "Still a no? Okay then a cupcake! 🧁",
+            "This is taking longer...",
+            "Still a no????",
+            "Pleaseeeee!",
+            "Oh well, I can still wait. .‸.",
+            "I'll write your name in the stars! ✨",
+            "Even my pet thinks you should say yes! 🐾",
+            "I can still wait!!!!",
+            "You wouldn't say no to a free hug, right? 🤗",
+            "I could just picture the two of us in my mind.",
+            "I’ll write your name in the sand at the beach! 🏖️",
+            "Even my grandma is rooting for us! 👵❤️",
+            "I'll make a mixtape just for you! 🎧",
+            "You're my favorite notification! 📲❤️",
+            "I’ll give you my Netflix password! 🎥",
+            "Every love song reminds me of you! 🎶💕",
+            "Even my phone autocorrects to your name! 📱😆",
+            "If love was a game, you’d be my high score! 🎮❤️",
+            "I made a wish, and you’re the answer! 🌠💕",
+            "All the messages still werent convincing???"
+        ];
+        let msgIndex = 0;
+
+        function shrinkNo() {
+            noSize -= 2;
+            yesSize += 5;
+            document.getElementById("no").style.fontSize = noSize + "px";
+            document.getElementById("yes").style.fontSize = yesSize + "px";
+            
+            if (msgIndex < messages.length) {
+                document.getElementById("message").innerText = messages[msgIndex];
+                msgIndex++;
+            } else {
+                document.getElementById("message").innerText = "Last chance, PLEASEEEEE! .·°՞(≧□≦)՞°·.";
+            }
+        }
+        
+        function sayYes() {
+            document.body.innerHTML = "<h1>Yipee! You said yes!( ˶ˆᗜˆ˵ )</h1><p>Thank you so much! Happy Valentine's Day! 💘</p>";
+        }
+    </script>
+</body>
+</html>
